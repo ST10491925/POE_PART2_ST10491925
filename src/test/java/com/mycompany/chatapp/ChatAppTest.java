@@ -16,71 +16,84 @@ import static org.junit.Assert.*;
  * @author RC_Student_lab
  */
 public class ChatAppTest {
-    
+ 
+
     public ChatAppTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("Setting up before all tests.");
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
+        System.out.println("Tearing down after all tests.");
     }
-    
+
     @Before
     public void setUp() {
+        System.out.println("Setting up before a test.");
     }
-    
+
     @After
     public void tearDown() {
+        System.out.println("Cleaning up after a test.");
     }
 
-    /**
-     * Test of main method, of class ChatApp.
-     */
+    /** Helper method to indicate success in a test. */
+    private void success() {
+        System.out.println("Test passed.");
+    }
+
+    /** Helper method to fail a test with a custom message. */
+    private void failure(String message) {
+        fail("Test failed: " + message);
+    }
+
     @Test
     public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        ChatApp.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Testing main method...");
+        String[] args = {};
+        try {
+            ChatApp.main(args);
+            success();
+        } catch (Exception e) {
+            failure("Main method threw exception: " + e.getMessage());
+        }
     }
 
-    /**
-     * Test of login method, of class ChatApp.
-     */
     @Test
     public void testLogin() {
-        System.out.println("login");
-        boolean expResult = false;
-        boolean result = ChatApp.login();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Testing login...");
+        try {
+            boolean result = ChatApp.login(); // Assume this is stubbed or adjusted for test
+            assertTrue("Expected login to succeed", result);
+            success();
+        } catch (Exception e) {
+            failure("Login method threw exception: " + e.getMessage());
+        }
     }
 
-    /**
-     * Test of sendMessage method, of class ChatApp.
-     */
     @Test
     public void testSendMessage() {
-        System.out.println("sendMessage");
-        ChatApp.sendMessage();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Testing sendMessage...");
+        try {
+            ChatApp.sendMessage();
+            success();
+        } catch (Exception e) {
+            failure("sendMessage threw exception: " + e.getMessage());
+        }
     }
 
-    /**
-     * Test of saveMessagesToJSON method, of class ChatApp.
-     */
     @Test
     public void testSaveMessagesToJSON() {
-        System.out.println("saveMessagesToJSON");
-        ChatApp.saveMessagesToJSON();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Testing saveMessagesToJSON...");
+        try {
+            ChatApp.saveMessagesToJSON();
+            success();
+        } catch (Exception e) {
+            failure("saveMessagesToJSON threw exception: " + e.getMessage());
+        }
     }
-    
 }
