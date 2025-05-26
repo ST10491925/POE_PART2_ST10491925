@@ -24,7 +24,7 @@ public class ChatApp {
     public static void main(String[] args) {
          if (!login()) return;
 
-    JOptionPane.showMessageDialog(null, "Welcome to QuickChat.");
+    JOptionPane.showMessageDialog(null, "Welcome to we communicate.");
 
     int maxMessages = 0;
     while (true) {
@@ -40,7 +40,7 @@ public class ChatApp {
     boolean exit = false;
     while (!exit) {
         String[] options = { "Send Message", "Show Recently Sent Messages", "Quit" };
-        int choice = JOptionPane.showOptionDialog(null, "Choose an option", "QuickChat Menu",
+        int choice = JOptionPane.showOptionDialog(null, "Choose an option", "we communicate Menu",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
         switch (choice) {
@@ -85,7 +85,7 @@ public class ChatApp {
     String user = JOptionPane.showInputDialog("Enter username:");
     String pass = JOptionPane.showInputDialog("Enter password:");
 
-    if ("admin".equals(user) && "M@bo123".equals(pass)) {
+    if ("Mtshali".equals(user) && "M@bo123".equals(pass)) {
         return true;
     } else {
         JOptionPane.showMessageDialog(null, "Login failed.");
